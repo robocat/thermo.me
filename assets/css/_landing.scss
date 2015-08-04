@@ -1,0 +1,548 @@
+#landing #share_container {
+  display: none;
+}
+
+#landing #landing_container {
+  display: block;
+}
+
+#landing .container {
+  margin: 0 0;
+  width: 100%;
+}
+
+#landing {
+  color: #fff;
+  background-color: rgb(60, 42, 42);
+  $font: 'Helvetica Neue', Helvetica, sans-serif;
+  $ip: "";
+
+  .header-container, .info-container, .download-container, .footer-container {
+    width: 100%;
+  }
+
+  .header, .info, .download, .footer {
+    margin: 0 auto;
+    width: 970px;
+  }
+
+  .header-container {
+    background: image-url("landing/header_background.jpg") center top no-repeat;
+    background-size: 2560px 900px;
+    padding-top: 60px;
+    height: 900px; // 900 + 60 padding
+  }
+
+  .header {
+    position: relative;
+
+    h1 {
+      color: #fff;
+      font: 44px / 50px $font;
+      font-weight: bold;
+      text-align: center;
+      text-shadow: 0px 2px 11px rgba(0, 0, 0, 0.75);
+    }
+
+    a {
+      color: transparent;
+    }
+
+    .appstore {
+      display: block;
+      height: 79px;
+      width: 207px;
+      @include retina-image("landing/appstore", 425px 79px);
+      background-repeat: no-repeat;
+      position: absolute;
+      left: 6px;
+      top: 385px;
+      opacity: 0;
+      background-color: transparent;
+
+      &:hover {
+        background-position: -213px 0;
+      }
+    }
+
+    .playstore {
+      display: block;
+      height: 79px;
+      width: 207px;
+      @include retina-image("landing/playstore", 425px 79px);
+      background-repeat: no-repeat;
+      position: absolute;
+      right: 6px;
+      top: 385px;
+      opacity: 0;
+
+      &:hover {
+        background-position: -213px 0;
+      }
+
+      background-size: 425px 79px;
+      
+    }
+
+    .phones {
+      margin-top: 60px;
+      position: relative;
+
+      .iphone {
+      	@include retina-image("landing/iphone", 296px 625px);
+        height: 625px;
+        width: 296px;
+        position: absolute;
+        left: -500px;
+        opacity: 0;
+        top: 25px;
+        z-index: 200;
+      }
+
+      .samsung {
+        height: 648px;
+        width: 332px;
+        @include retina-image("landing/s3", 332px 648px);
+        position: absolute;
+        left: 908px;
+        opacity: 0;
+        z-index: 100;
+      }
+    }
+
+    
+  }
+
+  .info-container {
+    height: 925px;
+    padding-top: 60px;
+  }
+
+  .info {
+    h2 {
+      font: 33px / 39px $font;
+      font-weight: 500;
+      text-align: center;
+      margin-bottom: 15px;
+      text-shadow: 0px 2px 11px rgba(0, 0, 0, 0.75);
+    }
+
+    p {
+      color: #d5a8a8;
+      font: 15px / 23px $font;
+      font-weight: lighter;
+    }
+
+    p.tagline {
+      text-align: center;
+      font: 23px / 31px $font;
+      font-weight: lighter;
+      text-shadow: 0px 2px 11px rgba(0, 0, 0, 0.75);
+    }
+
+    a {
+      color: #fff;
+      font-weight: 500;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    .hover {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+    }
+
+    .arow {
+      margin-top: 60px;
+
+      .aside, .bside {
+        float: left;
+        width: 475px;
+        position: relative;
+
+        &:hover .hover {
+          opacity: 1;
+        }
+
+        .hover {
+          display: block;
+          width: 475px;
+          height: 280px;
+          background-repeat: no-repeat;
+          background-size: 475px 280px;
+        }
+
+      }
+
+      .aside .hover {
+      	@include transition (all 0.3s ease-in-out);
+      	@include retina-image("landing/steampunk_hover", 475px 280px, jpg);
+      }
+
+      .bside .hover {
+      	@include transition (all 0.3s ease-in-out);
+      	@include retina-image("landing/thermodo_hover", 475px 280px, jpg);
+      }
+
+      .bside {
+        margin-left: 20px;
+      }
+    }
+
+    .brow {
+      margin-top: 35px;
+
+      .aside, .bside, .cside {
+        float: left;
+        width: 310px;
+        position: relative;
+
+        &:hover .hover {
+          opacity: 1;
+        }
+
+        .hover {
+			display: block;
+			width: 310px;
+			height: 200px;
+			@include transition (all 0.3s ease-in-out);
+			@include retina-image("landing/universal_hover", 310px 200px);
+        }
+      }
+
+      .bside, .cside {
+        margin-left: 20px;
+      }
+    }
+  }
+
+  .download-container {
+    background-color: #251a1a;
+    height: 315px;
+    padding-top: 60px;
+  }
+
+  .aside, .bside {
+    float: left;
+  }
+
+  .aside {
+    width: 256px;
+  }
+
+  .bside {
+    width: 663px;
+    margin-left: 50px;
+  }
+
+  .icon {
+    width: 256px;
+    height: 256px;
+    @include retina-image("landing/thermo", 256px 256px);
+  }
+
+  .download {
+    h2 {
+      font: 35px / 41px $font;
+      font-weight: 500;
+      text-shadow: 0px 2px 11px rgba(0, 0, 0, 0.75);
+      margin-bottom: 15px;
+    }
+
+    p {
+      color: #d5a8a8;
+      font: 23px / 31px $font;
+      text-shadow: 0px 2px 11px rgba(0, 0, 0, 0.75);
+      margin-bottom: 30px;
+    }
+
+    .appstore {
+      display: block;
+      float: left;
+      height: 79px;
+      width: 207px;
+      @include retina-image("landing/appstore", 425px 79px);
+      background-repeat: no-repeat;
+
+      &:hover {
+        background-position: -213px 0;
+      }
+    }
+
+    .playstore {
+      display: block;
+      float: left;
+      height: 79px;
+      width: 207px;
+      margin-left: 10px;
+      @include retina-image("landing/playstore", 425px 79px);
+      background-repeat: no-repeat;
+
+      &:hover {
+        background-position: -213px 0;
+      }
+    }
+
+    a {
+      color: transparent;
+    }
+  }
+
+  .footer-container {
+    background-color: rgb(60, 42, 42);
+    height: 235px;
+    padding-top: 115px;
+  }
+
+  .footer {
+    text-align: center;
+
+    .robocat {
+      display: inline-block;
+      color: transparent;
+      width: 98px;
+      height: 109px;
+      @include retina-image("landing/robocat", 98px 109px);
+      @include transition(opacity 0.3s ease-in-out);
+
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+
+    .legal {
+      margin-top: 30px;
+      font-size: 11pt;
+      font-family: Helvetica Neue, Helvetica, sans-serif;
+
+      &, a {
+        color: rgb(155, 128, 128);
+      }
+
+      a:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+// iPad portrait fix
+@media screen and (device-aspect-ratio: 3/4) and (orientation:portrait) {
+  html body#landing .container {
+    .header-container, .info-container, .download-container, .footer-container {
+      width: 1024px;
+    }
+  }
+}
+
+// iPhone landscape
+@media screen and (device-aspect-ratio: 40/71) and (orientation:landscape) {
+  html body#landing .container {
+     .header {
+      .phones {
+        .iphone {
+          left: 133px;
+        }
+
+        .samsung {
+          left: 225px;
+        }
+      }
+
+      .store {
+        left: 176px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-device-width: 480px) and (orientation:landscape) {
+
+  body#landing .container {
+    .header {
+      .phones {
+        .iphone {
+          left: 93px;
+        }
+
+        .samsung {
+          left: 185px;
+        }
+      }
+
+      .store {
+        left: 136px;
+      }
+    }
+  }
+}
+
+// iPhone
+@media only screen and (max-device-width: 480px) {
+  html body#landing .container {
+    width: 100%;
+  }
+
+  html #landing {
+    .header, .info, .download, .footer {
+      margin: 0 0;
+      width: 100%;
+      // width: 320px;
+    }
+
+    .header-container {
+      padding-top: 20px;
+      height: 750px;
+    }
+
+    .header {
+      h1 {
+        font-size: 36px;
+        line-height: 46px;
+        padding: 0 5px;
+      }
+
+      .phones {
+        margin-top: 30px;
+
+        .iphone, .samsung {
+          opacity: 1;
+        }
+
+        .iphone {
+          width: 180px;
+          height: 380px;
+          background-size: 180px 380px;
+          left: 13px;
+          top: 15px;
+        }
+
+        .samsung {
+          width: 202px;
+          height: 394px;
+          background-size: 202px 394px;
+          left: 105px;
+        }
+      }
+
+      .store {
+        opacity: 1;
+        position: absolute;
+        left: 56px;
+        right: 0;
+      }
+
+      .appstore {
+        top: 580px;
+      }
+
+      .playstore {
+        top: 660px;
+      }
+    }
+
+    .info-container {
+      padding-top: 20px;
+      height: auto !important;
+
+      .info {
+        h2 {
+          font-size: 28px;
+          line-height: 34px;
+          padding: 0 5px;
+        }
+
+        p {
+          font-size: 18px;
+          font-weight: 300;
+          line-height: 24px;
+          padding: 0 5px;
+          text-align-last: center;
+        }
+
+        .arow, .brow {
+          margin: 0;
+
+          .aside, .bside, .cside {
+            width: 100%;
+            padding: 0 0px;
+            float: none;
+            margin: 40px auto;
+
+            .hover {
+              display: none;
+            }
+
+            img {
+              display: block;
+              width: 300px;
+              height: 177px;
+              margin: 0 auto;
+            }
+
+            p {
+              text-align: center;
+              font-size: 18px;
+              font-weight: 300;
+              line-height: 24px;
+              padding: 0 5px;
+              margin-top: 10px;
+            }
+          }
+        }
+      }
+    }
+
+
+    .download-container {
+      height: auto;
+      padding-top: 20px;
+
+      .download {
+        .aside, .bside {
+          float: none;
+          width: 320px;
+          margin: 0 auto;
+        }
+
+        .icon {
+          width: 128px;
+          height: 128px;
+          background-size: 128px 128px;
+          margin: 0 auto;
+        }
+
+        .bside {
+          h2 {
+            text-align: center;
+            margin-top: 20px;
+          }
+
+          p {
+            text-align: center;
+            padding: 0 5px;
+          }
+
+          .appstore, .playstore {
+            margin: 0;
+            margin-left: 56px;
+          }
+
+          .playstore {
+            margin-bottom: 20px;
+          }
+        }
+      }
+    }
+
+    .footer-container {
+      height: 160px;
+      padding-top: 40px;
+    }
+  }
+}

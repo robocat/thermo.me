@@ -1,0 +1,747 @@
+$asset-pipeline: true;
+
+@import "_normalize";
+
+@import "bourbon";
+
+$default-text-shadow-color: rgba(#fff, 1.0);
+$default-text-shadow-blur: 1px;
+$default-text-shadow-v-offset: 1px;
+$default-text-shadow-h-offset: 1px;
+
+.clearboth {
+	clear: both;
+}
+
+html {
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+
+
+@import "_mixins";
+
+@import "landing";
+@import "fancybox";
+
+body#share {
+	background-color: #000;
+	overflow-x: hidden;
+
+	&.theme-simple-light {
+		background-color: #fff;
+	}
+}
+
+#share #landing_container {
+	display: none;
+}
+
+.container {
+	margin: 30px auto;
+	width: 768px;
+}
+
+.content {
+	float: left;
+	margin-left: 120px;
+	margin-top: 90px;
+	opacity: 0;
+	width: 380px;
+
+	h1 {
+	  color: #fff;
+	  font-size: 28px;
+	  font-weight: bold;
+	  padding-bottom: 5px;
+	  // font-family: "Neutradt";
+	  font-family: Helvetica;
+	  -webkit-font-smoothing: antialiased;
+	  margin-top: 20px;
+	}
+
+	h2 {
+	  color: #f6b794;
+	  text-transform: uppercase;
+	  font: bold 16px / 22px Helvetica;
+	  -webkit-font-smoothing: antialiased;
+	}
+
+	p {
+	  color: #fff;
+	  padding: 28px 0px 20px 0px;
+	  font: normal 13px / 21px 'Helvetica Neue', 'Helvetica', sans-serif;
+	  text-shadow: -1px -1px 1px #000;
+
+	  -webkit-font-smoothing: antialiased;
+	}
+
+	p a {
+	  color: #fff;
+	  text-decoration: none;
+	  font-weight: bold;
+
+	  &:hover {
+	    text-decoration: underline;
+	  }
+	}
+
+	small {
+	  clear: left;
+	  color: #353533;
+	  font: normal 12px/22px 'Helvetica Neue', 'Helvetica', sans-serif;
+	  display: block;
+	}
+
+	a#appstore {
+		display: block;
+		cursor: pointer;
+		width: 202px;
+		height: 61px;
+		margin-top: 0px;
+		@include retina-image("appstore", 202px 61px);
+	}
+
+	a#playstore {
+		display: block;
+		cursor: pointer;
+		width: 202px;
+		height: 61px;
+		margin-top: 10px;
+		@include retina-image("googleplay", 202px 61px);
+	}
+
+	#madebyrobocat {
+		display: block;
+		cursor: pointer;
+		width: 38px;
+		height: 41px;
+		margin-top: 15px;
+		@include retina-image("greycat", 38px 41px);
+	}
+}
+
+#share #background {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+
+	&.theme-simple-light {
+		background-color: #fff;
+	}
+}
+
+.thermometer {
+	float: left;
+	width: 116px;
+	height: 460px;
+	position: relative;
+	z-index: 1;
+	opacity: 0;
+
+	.empty, .full, .top, .temperature {
+		background-repeat: no-repeat;
+		background-position: left bottom;
+	}
+
+	.empty {
+		height: 460px;
+		width: 116px;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+	}
+
+	.full {
+		height: 100px;
+		width: 116px;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+	}
+
+	.top {
+		height:64px;
+		width: 116px;
+		position: absolute;
+		bottom: 68px;
+		left: 0;
+	}
+
+	.cold {
+		opacity: 1;
+
+		.empty { z-index: 100; }
+		.full { z-index: 110; }
+		.top { z-index: 120; }
+	}
+
+	.regular {
+		opacity: 0;
+
+		.empty { z-index: 200; }
+		.full { z-index: 210; }
+		.top { z-index: 220; }
+	}
+
+	.hot {
+		opacity: 0;
+
+		.empty { z-index: 300; }
+		.full { z-index: 310; }
+		.top { z-index: 320; }
+	}
+
+	.temperature {
+		position: absolute;
+		bottom: 0;
+		left: 100px;
+		height: 82;
+		width: 80px;
+		opacity: 0;
+		text-align: center;
+		padding-left: 12px;
+		z-index: 500;
+
+		p {
+			width: auto;
+			z-index: 510;
+			font-weight: bold;
+		
+		}
+
+		#temperature_text {
+			color: rgb(21, 21, 6);
+			font: 32px 'Helvetica Neue', 'Helvetica', sans-serif;
+			font-weight: bold;
+			// height: 30px;
+			margin-top: 15px;
+			// text-align: center;
+
+			$default-text-shadow-color: rgba(#fff, 1.0);
+			// @include single-text-shadow;
+		}
+
+		#feels_like_text {
+			color: rgb(67, 67, 67);
+			font: 9pt 'Helvetica Neue', 'Helvetica', sans-serif;
+			font-weight: bold;
+			text-transform: none;
+			// text-align: center;
+			margin-top: -2px;
+			margin-left: -2px;
+			opacity: 0;
+		}
+	}
+}
+
+@media only screen and (max-device-width: 480px) {
+    /* iPhone only */
+
+    html body.thermo .container {
+    	width: 320px;
+
+    	.thermometer {
+    		float: none;
+    		margin-left: 102px;
+    	}
+
+    	.content {
+    		width: 320px;
+    		margin-left: 0px;
+    		margin-top: 20px;
+    		float: none;
+
+    		h1, h2, p {
+    			text-align: center;
+    		}
+
+    		p {
+    			padding-top: 10px;
+    			padding-bottom: 10px;
+    		}
+
+    		a#appstore, a#playstore {
+    			margin: 10px auto;
+    		}
+
+    		#madebyrobocat {
+    			margin: 20px auto;
+    		}
+    	}
+    }
+}
+
+@media only screen and (max-device-width: 480px) and (orientation:landscape) {
+	body.thermo div.container {
+		width: 320px;
+		margin: 0 auto;
+	}
+}
+
+// Robocat images
+body.theme-magic #madebyrobocat,
+body.theme-simple-dark #madebyrobocat,
+body.theme-bling #madebyrobocat, 
+body.theme-normal #madebyrobocat {
+	@include retina-image("whitecat", 38px 41px);
+}
+
+body.theme-steampunk #madebyrobocat {
+	@include retina-image("greycat", 38px 41px);
+}
+
+body.theme-wood #madebyrobocat,
+body.theme-simple-light #madebyrobocat {
+	@include retina-image("darkcat", 38px 41px);
+}
+
+
+// =========================
+// CLASSIC THEME
+// =========================
+
+body.theme-normal .container { width: 116px + 120px + 380px; }
+
+.thermometer.theme-normal {
+	.temperature {
+		width: 102px;
+		height: 82px;
+		@include retina-image("normal/temperature", 102px 82px);
+	}
+
+	.cold {
+		&.empty { @include retina-image("normal/cold_empty", 116px 460px); }
+		&.full { @include retina-image("normal/cold_full", 116px 412px); }
+		&.top { @include retina-image("normal/cold_top", 116px 64px); }
+	}
+
+	.regular {
+		&.empty { @include retina-image("normal/regular_empty", 116px 460px); }
+		&.full { @include retina-image("normal/regular_full", 116px 412px); }
+		&.top { @include retina-image("normal/regular_top", 116px 64px); }
+	}
+
+	.hot {
+		&.empty { @include retina-image("normal/hot_empty", 116px 460px); }
+		&.full { @include retina-image("normal/hot_full", 116px 412px); }
+		&.top { @include retina-image("normal/regular_top", 116px 64px); }
+	}
+}
+
+// =========================
+// STEAMPUNK THEME
+// =========================
+
+@media only screen and (max-device-width: 480px) {
+    /* iPhone only */
+
+    body.theme-steampunk div.container {
+    	width: 320px;
+
+    	.thermometer {
+    		margin-left: 57px;
+    	}
+
+    	.content {
+    		width: 320px;
+		}
+    }
+}
+
+body.theme-steampunk .container { width: 206px + 120px + 380px; }
+
+.thermometer.theme-steampunk {
+	&, .empty, .full, .top { width: 206px; }
+
+	.temperature {
+		left: 158px;
+		width: 106px;
+		height: 88px;
+		padding-left: 10px;
+
+		#temperature_text, #feels_like_text {
+			font-family: "Georgia", serif;
+			text-shadow: none;
+		}
+
+		#temperature_text {
+			margin-top: 22px;
+			font-size: 26px;
+		}
+
+		#feels_like_text {
+			font-weight: bold;
+			font-size: 9px;
+			margin-top: 0px;
+		}
+
+		@include retina-image("steampunk/temperature", 106px 88px);
+	}
+
+	.cold {
+		&.empty { @include retina-image("steampunk/cold_empty", 206px 460px); }
+		&.full { @include retina-image("steampunk/cold_full", 206px 375px); }
+	}
+
+	.regular {
+		&.empty { @include retina-image("steampunk/regular_empty", 206px 460px); }
+		&.full { @include retina-image("steampunk/regular_full", 206px 375px); }
+	}
+
+	.hot {
+		&.empty { @include retina-image("steampunk/hot_empty", 206px 460px); }
+		&.full { @include retina-image("steampunk/hot_full", 206px 375px); }
+	}
+}
+
+// =========================
+// WOOD THEME
+// =========================
+//
+
+@media only screen and (max-device-width: 480px) {
+    /* iPhone only */
+
+    body.theme-wood div.container {
+    	width: 320px;
+    	
+    	.thermometer {
+    		margin-left: 98px;
+    	}
+
+    	.content {
+    		width: 320px;
+ 			}
+    }
+}
+
+body.theme-wood .container { width: 124px + 120px + 380px; }
+
+.theme-wood .content {
+	.funny {
+		color: #000;
+	}
+
+	.location_text {
+		color: #999;
+	}
+
+	.description, .description a {
+		color: #000;
+
+	}
+}
+
+.thermometer.theme-wood {
+	&, .empty { height:463px; }
+	&, .empty, .full, .top { width: 124px; }
+
+	.top { width: 49px; height: 16px; }
+
+	.temperature {
+		left: 104px;
+		width: 102px;
+		height: 82px;
+
+		@include retina-image("wood/temperature", 102px 82px);
+	}
+
+	#temperature_text {
+		color: #fff;
+		text-shadow: none;
+	}
+
+	#feels_like_text {
+		color: #ccc;
+		text-shadow: none;
+	}
+
+	.cold {
+		&.empty { @include retina-image("wood/regular_empty", 124px 463px); }
+		&.full { @include retina-image("wood/cold_full", 124px 412px); }
+		&.top { @include retina-image("wood/glow_cold", 98px 32px); }
+	}
+
+	.regular {
+		&.full { @include retina-image("wood/regular_full", 124px 412px); }
+		&.top { @include retina-image("wood/glow", 98px 32px); }
+	}
+
+	.hot {
+		&.full {  @include retina-image("wood/hot_full", 124px 412px); }
+	}
+}
+
+// =========================
+// SIMPLE (LIGHT) THEME
+// =========================
+
+@media only screen and (max-device-width: 480px) {
+    /* iPhone only */
+
+    body.theme-simple-light div.container {
+    	width: 320px;
+    	
+    	.thermometer {
+    		margin-left: 119px;
+    	}
+
+    	.content {
+    		width: 320px;
+ 			}
+    }
+}
+
+body.theme-simple-light .container { width: 82px + 120px + 380px; }
+
+.theme-simple-light .content {
+	.funny {
+		color: #000;
+	}
+
+	.location_text {
+		color: #999;
+	}
+
+	.description, .description a {
+		color: #000;
+
+	}
+}
+
+.thermometer.theme-simple-light {
+	background-color: white;
+
+	&, .empty { height:441px; }
+	&, .empty, .full, .top { width: 82px; }
+
+	.temperature {
+		left: 88px;
+		width: 96px;
+		height: 79px;
+
+		@include retina-image("simple/light_temperature", 96px 79px);
+		#temperature_text, #feels_like_text {
+			color: #fff;
+			text-shadow: none;
+		}
+	}
+
+	.cold {
+		&.empty { @include retina-image("simple/light_regular_empty", 82px 441px); }
+		&.full { @include retina-image("simple/light_cold_full", 82px 411px); }
+		&.top { @include retina-image("simple/top_cold", 37px 7px); }
+	}
+
+	.regular {
+		&.full { @include retina-image("simple/light_regular_full", 82px 411px); }
+		&.top { @include retina-image("simple/top_regular", 37px 7px); }
+	}
+
+	.hot {
+		&.full { @include retina-image("simple/light_hot_full", 82px 411px); }
+		&.top { @include retina-image("simple/top_hot", 37px 7px); }
+	}
+}
+
+// =========================
+// SIMPLE DARK THEME
+// =========================
+
+@media only screen and (max-device-width: 480px) {
+    /* iPhone only */
+
+    body.theme-simple-dark div.container {
+    	width: 320px;
+    	
+    	.thermometer {
+    		margin-left: 119px;
+    	}
+
+    	.content {
+    		width: 320px;
+ 			}
+    }
+}
+
+body.theme-simple-dark .container { width: 82px + 120px + 380px; }
+
+.thermometer.theme-simple-dark {
+
+	&, .empty { height:441px; }
+	&, .empty, .full, .top { width: 82px; }
+
+	.top { width: 37px; height: 7px; }
+
+	.temperature {
+		left: 88px;
+		width: 96px;
+		height: 79px;
+		@include retina-image("simple/dark_temperature", 96px 79px);
+
+		#temperature_text, #feels_like_text {
+			text-shadow: none;
+		}
+	}
+
+	.cold {
+		&.empty { @include retina-image("simple/dark_regular_empty", 82px 441px); }
+		&.full { @include retina-image("simple/dark_cold_full", 82px 411px); }
+		&.top { @include retina-image("simple/top_cold", 37px 7px); }
+	}
+
+	.regular {
+		&.full { @include retina-image("simple/dark_regular_full", 82px 411px); }
+		&.top { @include retina-image("simple/top_regular", 37px 7px); }
+	}
+
+	.hot {
+		&.full { @include retina-image("simple/dark_hot_full", 82px 411px); }
+		&.top { @include retina-image("simple/top_hot", 37px 7px); }
+	}
+}
+
+// =========================
+// MAGIC THEME
+// =========================
+
+@media only screen and (max-device-width: 480px) {
+    /* iPhone only */
+
+    body.theme-magic div.container {
+    	width: 320px;
+    	
+    	.thermometer {
+    		margin-left: 7px;
+    	}
+
+    	.content {
+    		width: 320px;
+    		margin-left: 0;
+ 			}
+    }
+}
+
+body.theme-magic .container { width: 305px + 40px + 380px; .content { margin-left: 40px; } }
+
+.thermometer.theme-magic {
+	&, .empty { height:470px; }
+	&, .empty, .full, .top { width: 305px; }
+
+	.top { width: 93px; height: 31px; left: (305px - 93px) / 2; bottom: 100px - 20px/2; }
+
+	#temperature_text, #feels_like_text {
+		font-family: "Georgia", serif;
+	}
+
+	#temperature_text {
+		font-size: 24px;
+		margin-top: 20px;
+		text-shadow: none;
+	}
+
+	#feels_like_text {
+		font-size: 11px;
+		margin-top: 1px;
+		// font-weight: bold;
+		text-shadow: none;
+	}
+
+	.temperature {
+		left: 185px;
+		width: 125px;
+		height: 83px;
+		padding-left: 6px;
+
+		@include retina-image("magic/temperature", 125px 83px);
+
+		p {
+			// margin-left: 14px;
+		}
+	}
+
+	.cold {
+		&.empty { @include retina-image("magic/regular_empty", 305px 470px); }
+		&.full { @include retina-image("magic/cold_full", 305px 415px); }
+		&.top { @include retina-image("magic/glow", 93px 31px); }
+	}
+
+	.regular {
+		&.full { @include retina-image("magic/regular_full", 305px 415px); }
+		&.top { @include retina-image("magic/glow", 93px 31px); }
+	}
+
+	.hot {
+		&.full { @include retina-image("magic/hot_full", 305px 415px); }
+		&.top { @include retina-image("magic/glow", 93px 31px); }
+	}
+}
+
+// =========================
+// BLING THEME
+// =========================
+
+@media only screen and (max-device-width: 480px) {
+    /* iPhone only */
+
+    body.theme-bling div.container {
+    	width: 320px;
+    	
+    	.thermometer {
+    		margin-left: 82px;
+
+    		.temperature {
+    			left: 125px;
+    		}
+    	}
+
+    	.content {
+    		width: 320px;
+ 			}
+    }
+}
+
+body.theme-bling .container { width: 156px + 120px + 380px; }
+
+.thermometer.theme-bling {
+	&, .empty { height:460px; }
+	&, .empty, .full, .top { width: 156px; }
+
+	.top { width: 101px; height: 19px; }
+
+	.temperature {
+		left: 142px;
+		width: 103px;
+		height: 83px;
+
+		@include retina-image("bling/temperature", 103px 83px);
+	}
+
+	.cold {
+		&.empty { @include retina-image("bling/regular_empty", 156px 460px); }
+		&.full { @include retina-image("bling/cold_full", 156px 396px); }
+		&.top { @include retina-image("bling/regular_top", 101px 19px); }
+	}
+
+	.regular {
+		&.full { @include retina-image("bling/regular_full", 156px 396px); }
+		&.top { @include retina-image("bling/regular_top", 101px 19px); }
+	}
+
+	.hot {
+		&.full { @include retina-image("bling/hot_full", 156px 396px); }
+		&.top { @include retina-image("bling/regular_top", 101px 19px); }
+	}
+
+	.chain {
+		@include retina-image("bling/thermo_chain", 157px 138px);
+		height: 138px;
+		position: absolute;
+		left: -3px;
+		top: 235px;
+		width: 157px;
+		z-index: 400;
+	}
+}
+}

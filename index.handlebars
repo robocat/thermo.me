@@ -1,0 +1,118 @@
+{{> header }}
+
+<div class="container" id="landing_container">
+	<div class="header-container">
+		<header class="header">
+			<h1>The world's most<br> downloaded thermometer</h1>
+			<a href="http://itunes.apple.com/app/thermo/id414215658?mt=8" target="_blank" class="appstore store">Available on the App Store</a>
+
+			<div class="phones">
+				<div class="iphone" id="iphone"></div>
+				<div class="samsung" id="samsung"></div>
+			</div>
+
+			<a href="https://play.google.com/store/apps/details?id=com.robocatapps.thermo" target="_blank" class="playstore store">Get it on Google Play</a>
+		</header>
+	</div> <!-- .header-container -->
+
+	<div class="info-container">
+		<section class="info" role="main">
+			<h2>Thermo is a simple, free approach to weather.</h1>
+			<p class="tagline">This little pocket thermometer shows the current temperature outside<br> along with the temperature from the day before.</p>
+
+			<div class="arow">
+				<div class="aside">
+					<a href="http://thermo.me/?loc" class="hover" target="_blank"></a>
+					<a href="http://thermo.me/?loc" target="_blank">
+						{{{img "landing/steampunk.png" true "steampunk" }}}
+					</a>
+					<p>Share the temperature with your friends and followers directly from Thermo. They'll get to see an awesome <strong>animated web version</strong> using the exact theme you're using!</p>
+				</div> <!-- .aside -->
+
+				<div class="bside">
+					<a href="http://thermodo.com" class="hover" target="_blank"></a>
+					<a href="http://thermodo.com" target="_blank">
+						{{{img "landing/thermodo.png" true "thermodo" }}}
+					</a>
+					<p>Thermo was the original inspiration to the Kickstarter gadget hit Thermodo. <a href="http://thermodo.com" target="_blank">Learn more</a> about how a bad app review turned into a fantastic new product. Thermo obviously also supports Thermodo.</p>
+				</div> <!-- .bside -->
+
+				<div class="clearboth"></div>
+			</div> <!-- .arow -->
+
+			<div class="brow">
+				<div class="aside">
+					<a href="http://www.youtube.com/watch?v=9NF3M_qj6bQ" class="hover video" target="_blank"></a>
+					<a href="http://www.youtube.com/watch?v=9NF3M_qj6bQ" class="video" target="_blank">
+						{{{img "landing/universal.png" true "universal" }}}
+					</a>
+					<p>Thermo is a universal app for iOS. We’ve created an entirely unique experience on the iPad. <a class="video" href="http://www.youtube.com/watch?v=9NF3M_qj6bQ" target="_blank">Watch this video</a> and get inspired.</p>
+				</div> <!-- .aside -->
+
+				<div class="bside">
+					{{{img "landing/international.png" true "international" }}}
+					<p>Thermo is truly international and is localized in 22 languages, including the language of love.</p>
+				</div> <!-- .bside -->
+
+
+				<div class="cside">
+					{{{img "landing/themes.png" true "themes" }}}
+					<p>With the in-app theme store you can make Thermo look excitingly different. How about a steampunk thermometer?</p>
+				</div> <!-- .cside -->
+
+				<div class="clearboth"></div>
+			</div> <!-- .brow -->
+		</section>
+	</div> <!-- .header-container -->
+
+	<div class="download-container">
+		<section class="download">
+			<div class="aside">
+				<div class="icon"></div>
+			</div>
+
+			<div class="bside">
+				<h2>Join the no-frills weather crowd</h2>
+				<p>Hundreds of thousands of people are using Thermo every day. It's simple, it's beautiful and it's free. What are you waiting for?</p>
+				<a class="appstore" target="_blank" href="http://itunes.apple.com/app/thermo/id414215658?mt=8">Available on the App Store</a>
+				<a class="playstore" target="_blank" href="https://play.google.com/store/apps/details?id=com.robocatapps.thermo">Get it on Google Play</a>
+				<div class="clearboth"></div>
+			</div>
+
+			<div class="clearboth"></div>
+		</section>
+	</div> <!-- .download-container -->
+
+	<div class="footer-container">
+		<footer class="footer">
+			<a href="http://robo.cat" target="_blank" class="robocat">Robocat</a>
+			<p class="legal">&copy; Robocat. All Rights Reserved. <a href="/privacy/">Privacy Policy</a>.</p>
+		</footer>
+	</div>
+</div>
+
+<div class="container" id="share_container">
+	<div id="thermometer" class="thermometer">
+		<div class="temperature" id="temperature">
+			<p id="temperature_text"><span class="data">?</span>&deg;</p>
+			<p id="feels_like_text"><span class="text">Feels</span>&nbsp;<span class="data">?</span>&deg;</p>
+		</div>  <!-- #temperature -->
+
+		<!-- Accessories -->
+		<div class="chain"></div>
+
+	</div>  <!-- #thermometer -->
+
+	<div class="content">
+		<h1 class="funny">Dang, that's hot!</h1>
+		<h2 class="location_text">It’s <span id="smalltemp" class="temperature">59</span>°<span class="measurement">C</span> in <span id="location">Copenhagen, Denmark</span></h2>
+		<p class="description"><a href="http://itunes.apple.com/app/thermo/id414215658?mt=8" target="_blank">Thermo</a> is a simple approach to Weather. This little pocket thermometer shows the current temperature outside.</p>
+		<a class="appstore" id="appstore" href="http://itunes.apple.com/app/thermo/id414215658?mt=8" target="_blank"></a>
+		<a class="playstore" id="playstore" href="https://play.google.com/store/apps/details?id=com.robocatapps.thermo" target="_blank"></a>
+		<a href="http://www.robocatapps.com/" target="_blank" id="madebyrobocat"></a>
+		<!-- <br /> -->
+	</div> <!-- .content -->
+	<div class="clearboth"></div>
+</div>  <!-- .container  -->
+
+{{> footer }}
