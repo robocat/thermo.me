@@ -10,7 +10,7 @@ max_age:
 
 gzip: true
 
-ignore_on_server: themes
+ignore_on_server: downloads
 
 cloudfront_distribution_config:
     aliases:
