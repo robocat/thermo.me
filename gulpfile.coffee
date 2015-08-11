@@ -32,7 +32,7 @@ retina_suffix = "_2x"
 # Paths used for input of generated files
 paths = {
 	# These files are copied directly into public/
-	copyfile: "{downloads/*,favicon.ico,apple-touch-icon.png}",
+	copyfile: "{downloads/*,favicon.ico,apple-touch-icon.png,themes/*}",
 	# Template handlebar files
 	handlebars: "./{**/,}*.handlebars",
 	# Sass files
