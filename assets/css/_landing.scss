@@ -52,7 +52,7 @@
       display: block;
       height: 79px;
       width: 207px;
-      @include retina-background("landing/appstore.png", 425px 79px);
+      @include retina-background("landing/appstore.png", 425px 79px, false, 0 0);
       position: absolute;
       left: 6px;
       top: 385px;
@@ -68,7 +68,7 @@
       display: block;
       height: 79px;
       width: 207px;
-      @include retina-background("landing/playstore.png", 425px 79px);
+      @include retina-background("landing/playstore.png", 425px 79px, false, 0 0);
       background-repeat: no-repeat;
       position: absolute;
       right: 6px;
@@ -278,7 +278,7 @@
       height: 79px;
       width: 207px;
       margin-left: 10px;
-      @include retina-background("landing/playstore.png", 425px 79px);
+      @include retina-background("landing/playstore.png", 425px 79px, false, 0 0);
       background-repeat: no-repeat;
 
       &:hover {
