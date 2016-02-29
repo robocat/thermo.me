@@ -52,8 +52,7 @@
       display: block;
       height: 79px;
       width: 207px;
-      @include retina-image("landing/appstore", 425px 79px);
-      background-repeat: no-repeat;
+      @include retina-background("landing/appstore.png", 425px 79px);
       position: absolute;
       left: 6px;
       top: 385px;
@@ -69,7 +68,7 @@
       display: block;
       height: 79px;
       width: 207px;
-      @include retina-image("landing/playstore", 425px 79px);
+      @include retina-background("landing/playstore.png", 425px 79px);
       background-repeat: no-repeat;
       position: absolute;
       right: 6px;
@@ -89,7 +88,7 @@
       position: relative;
 
       .iphone {
-      	@include retina-image("landing/iphone", 296px 625px);
+      	@include retina-background("landing/iphone.png", 296px 625px);
         height: 625px;
         width: 296px;
         position: absolute;
@@ -102,7 +101,7 @@
       .samsung {
         height: 648px;
         width: 332px;
-        @include retina-image("landing/s3", 332px 648px);
+        @include retina-background("landing/s3.png", 332px 648px);
         position: absolute;
         left: 908px;
         opacity: 0;
@@ -181,12 +180,12 @@
 
       .aside .hover {
       	@include transition (all 0.3s ease-in-out);
-      	@include retina-image("landing/steampunk_hover", 475px 280px, jpg);
+      	@include retina-background("landing/steampunk_hover.jpg", 475px 280px, jpg);
       }
 
       .bside .hover {
       	@include transition (all 0.3s ease-in-out);
-      	@include retina-image("landing/thermodo_hover", 475px 280px, jpg);
+      	@include retina-background("landing/thermodo_hover.jpg", 475px 280px, jpg);
       }
 
       .bside {
@@ -211,7 +210,7 @@
 			width: 310px;
 			height: 200px;
 			@include transition (all 0.3s ease-in-out);
-			@include retina-image("landing/universal_hover", 310px 200px);
+			@include retina-background("landing/universal_hover.png", 310px 200px);
         }
       }
 
@@ -243,7 +242,7 @@
   .icon {
     width: 256px;
     height: 256px;
-    @include retina-image("landing/thermo", 256px 256px);
+    @include retina-background("landing/thermo.png", 256px 256px);
   }
 
   .download {
@@ -266,8 +265,7 @@
       float: left;
       height: 79px;
       width: 207px;
-      @include retina-image("landing/appstore", 425px 79px);
-      background-repeat: no-repeat;
+      @include retina-background("landing/appstore.png", 425px 79px, false, 0 0);
 
       &:hover {
         background-position: -213px 0;
@@ -280,7 +278,7 @@
       height: 79px;
       width: 207px;
       margin-left: 10px;
-      @include retina-image("landing/playstore", 425px 79px);
+      @include retina-background("landing/playstore.png", 425px 79px);
       background-repeat: no-repeat;
 
       &:hover {
@@ -307,7 +305,7 @@
       color: transparent;
       width: 98px;
       height: 109px;
-      @include retina-image("landing/robocat", 98px 109px);
+      @include retina-background("landing/robocat.png", 98px 109px);
       @include transition(opacity 0.3s ease-in-out);
 
       &:hover {

@@ -1,3 +1,12 @@
+// Returns path for image-url
+$image-path: '/images/' !default;
+
+@if not function-exists(image-url) {
+  @function image-url($filename) {
+    @return url('#{$image-path}#{$filename}');
+  }
+}
+
 @mixin retina-hover($name, $size, $type: "png", $hover-suffix: "-hover", $retina-suffix: "_2x") {
 	$hover: $name + $hover-suffix;
 
@@ -9,4 +18,16 @@
 		content: image-url($hover + "." + $type);
 		@include hidpi { content: image-url($hover + $retina-suffix + "." + $type); }
 	}
+}
+
+@mixin retina-background($name, $size, $constraint: false, $position: 50% 50%) {
+  background-image: image-url($name);
+  background-size: $size;
+  background-repeat: no-repeat;
+  background-position: $position;
+
+  @if $constraint {
+    height: nth($size, 2);
+    width: nth($size, 1);
+  }
 }
